@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_all_dishes">
+
+    <fragment
+        android:id="@+id/navigation_all_dishes"
+        android:name="com.example.favdish.view.fragments.AllDishesFragment"
+        android:label="@string/title_all_dishes"
+        tools:layout="@layout/fragment_all_dishes" >
+        <action
+            android:id="@+id/action_navigation_all_dishes_to_editDishFragment"
+            app:destination="@id/editDishFragment"
+            app:popUpTo="@id/navigation_all_dishes" />
+        <action
+            android:id="@+id/action_navigation_all_dishes_to_addUpdateFragment"
+            app:destination="@id/addUpdateFragment" />
+        <action
+            android:id="@+id/action_navigation_all_dishes_to_editDishFragment3"
+            app:destination="@id/editDishFragment" />
+        <action
+            android:id="@+id/action_navigation_all_dishes_to_DetailDishFragment"
+            app:destination="@id/DetailDishFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favourite_dishes"
+        android:name="com.example.favdish.view.fragments.FavouriteDishesFragment"
+        android:label="@string/title_favourite_dishes"
+        tools:layout="@layout/fragment_favourite_dishes" >
+        <action
+            android:id="@+id/action_navigation_favourite_dishes_to_editDishFragment"
+            app:destination="@id/editDishFragment"
+            app:popUpTo="@id/navigation_favourite_dishes" />
+        <action
+            android:id="@+id/action_navigation_favourite_dishes_to_DetailDishFragment"
+            app:destination="@id/DetailDishFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_random_dish"
+        android:name="com.example.favdish.view.fragments.RandomDishFragment"
+        android:label="@string/title_random_dish"
+        tools:layout="@layout/fragment_random_dish" />
+    <fragment
+        android:id="@+id/DetailDishFragment"
+        android:name="com.example.favdish.view.fragments.DetailDishFragment"
+        android:label="fragment_edit_dish"
+        tools:layout="@layout/fragment_detail_dish" >
+        <argument
+            android:name="image"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <argument
+            android:name="ingredients"
+            app:argType="string" />
+        <argument
+            android:name="cooking_time"
+            app:argType="string" />
+        <argument
+            android:name="cooking_instructions"
+            app:argType="string" />
+        <argument
+            android:name="imagesource"
+            app:argType="string" />
+        <argument
+            android:name="favourite_dish"
+            app:argType="boolean" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUpdateFragment"
+        android:name="com.example.favdish.view.fragments.AddUpdateFragment"
+        android:label="fragment_add_update_dish"
+        tools:layout="@layout/fragment_add_update_dish" />
+    <fragment
+        android:id="@+id/editDishFragment"
+        android:name="com.example.favdish.view.fragments.EditDishFragment"
+        android:label="EditDishFragment" >
+        <argument
+            android:name="favDish"
+            app:argType="com.example.favdish.model.entities.FavDish" />
+    </fragment>
+</navigation>
